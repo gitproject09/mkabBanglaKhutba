@@ -1,6 +1,7 @@
-# [Contacts of Majlish Khuddamul Ahmadiyya, Bangladesh][published url]
+# [Ahmadiyya Muslim Jamaat, Bangladesh][published url]
 ## Developer: [Sopan Ahmed][instructor url]
 
+Bangla Khutba
 
 Majlis Khuddamul Ahmadiyya Bangladesh.
 Latest Bangla Khutba from Friday Sermon.

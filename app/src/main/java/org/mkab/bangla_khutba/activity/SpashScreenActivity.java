@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import org.mkab.bangla_khutba.R;
 
-
 public class SpashScreenActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 1000;
@@ -41,7 +40,6 @@ public class SpashScreenActivity extends AppCompatActivity {
                         1);
             }
         }, SPLASH_TIME_OUT);
-
 
     }
 
