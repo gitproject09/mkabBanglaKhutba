@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bangla Khutba</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_khutba_details">KhutbaDetailsActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="txt_heading">Majlis Khuddamul Ahmadiyya Bangladesh.\n\nLatest Bangla Khutba from Friday Sermon.</string>
+
+</resources>
