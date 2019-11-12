@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#81A8B8"
+    android:background="@color/off_white"
     tools:context=".activity.KhutbaDetailsActivity">
 
     <ScrollView
@@ -13,12 +13,14 @@
             android:id="@+id/fullscreen_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:padding="1dp"
+            android:layout_margin="1dp"
             android:keepScreenOn="true"
+            android:textAlignment="center"
             android:text="bangla"
             android:textIsSelectable="true"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
 
     </ScrollView>
 
