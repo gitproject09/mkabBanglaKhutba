@@ -13,6 +13,8 @@ import java.util.List;
 import org.mkab.bangla_khutba.R;
 import org.mkab.bangla_khutba.model.KhutbaModel;
 
+import androidx.cardview.widget.CardView;
+
 public class KhutbaAdapter extends ArrayAdapter<KhutbaModel> {
 
     List<KhutbaModel> modelList;
@@ -37,7 +39,7 @@ public class KhutbaAdapter extends ArrayAdapter<KhutbaModel> {
         final ViewHolder vh;
         if (convertView == null) {
             View view = mInflater.inflate(R.layout.layout_row_view, parent, false);
-            vh = ViewHolder.create((RelativeLayout) view);
+            vh = ViewHolder.create((CardView) view);
             view.setTag(vh);
         } else {
             vh = (ViewHolder) convertView.getTag();
@@ -52,18 +54,18 @@ public class KhutbaAdapter extends ArrayAdapter<KhutbaModel> {
     }
 
     private static class ViewHolder {
-        public final RelativeLayout rootView;
+        public final CardView rootView;
 
         public final TextView textViewName;
         public final TextView textViewCountry;
 
-        private ViewHolder(RelativeLayout rootView, TextView textViewName, TextView textViewCountry) {
+        private ViewHolder(CardView rootView, TextView textViewName, TextView textViewCountry) {
             this.rootView = rootView;
             this.textViewName = textViewName;
             this.textViewCountry = textViewCountry;
         }
 
-        public static ViewHolder create(RelativeLayout rootView) {
+        public static ViewHolder create(CardView rootView) {
             TextView textViewName = (TextView) rootView.findViewById(R.id.textViewName);
             TextView textViewCountry = (TextView) rootView.findViewById(R.id.textViewCountry);
             return new ViewHolder(rootView, textViewName, textViewCountry);

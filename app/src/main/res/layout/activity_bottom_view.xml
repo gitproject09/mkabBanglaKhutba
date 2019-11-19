@@ -6,7 +6,7 @@
     android:id="@+id/parentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/off_white"
+    android:background="@color/list_background"
     android:fitsSystemWindows="true"
     tools:context=".activity.BottomViewActivity">
 
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@android:color/white"
+        android:background="@color/list_view_background"
         app:layout_behavior="org.mkab.bangla_khutba.util.BottomNavigationBehavior"
         design:menu="@menu/tab_menu" />
 

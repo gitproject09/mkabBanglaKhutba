@@ -1,0 +1,128 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">32dp</dimen>
+    <dimen name="activity_vertical_margin">32dp</dimen>
+
+    <!-- Calculation for x-large dimen : base * 2 -->
+
+    <!-- Text Size for different Layout -->
+    <dimen name="textSize1">2sp</dimen>
+    <dimen name="textSize2">4sp</dimen>
+    <dimen name="textSize3">6sp</dimen>
+    <dimen name="textSize4">8sp</dimen>
+    <dimen name="textSize5">10sp</dimen>
+    <dimen name="textSize6">12sp</dimen>
+    <dimen name="textSize7">14sp</dimen>
+    <dimen name="textSize8">16sp</dimen>
+    <dimen name="textSize9">18sp</dimen>
+    <dimen name="textSize10">20sp</dimen>
+
+    <dimen name="textSize12">24sp</dimen>
+    <dimen name="textSize13">26sp</dimen>
+    <dimen name="textSize14">28sp</dimen>
+    <dimen name="textSize15">30sp</dimen>
+    <dimen name="textSize16">32sp</dimen>
+    <dimen name="textSize18">36sp</dimen>
+    <dimen name="textSize20">40sp</dimen>
+
+    <dimen name="textSize22">44sp</dimen>
+    <dimen name="textSize25">50sp</dimen>
+    <dimen name="textSize28">56sp</dimen>
+    <dimen name="textSize30">60sp</dimen>
+
+    <dimen name="textSize32">64sp</dimen>
+    <dimen name="textSize35">70sp</dimen>
+    <dimen name="textSize38">76sp</dimen>
+    <dimen name="textSize40">80sp</dimen>
+
+    <dimen name="textSize42">84sp</dimen>
+    <dimen name="textSize45">90sp</dimen>
+    <dimen name="textSize48">96sp</dimen>
+    <dimen name="textSize50">100sp</dimen>
+    <!-- End of TextSize -->
+
+    <!-- dp size for padding, margin, layout width, height -->
+    <dimen name="size0_5">1dp</dimen>
+    <dimen name="size1">2dp</dimen>
+    <dimen name="size2">4dp</dimen>
+    <dimen name="size3">6dp</dimen>
+    <dimen name="size4">8dp</dimen>
+    <dimen name="size5">10dp</dimen>
+    <dimen name="size6">12dp</dimen>
+    <dimen name="size7">14dp</dimen>
+    <dimen name="size8">16dp</dimen>
+    <dimen name="size9">18dp</dimen>
+    <dimen name="size10">20dp</dimen>
+
+    <dimen name="size11">22dp</dimen>
+    <dimen name="size12">24dp</dimen>
+    <dimen name="size13">26dp</dimen>
+    <dimen name="size14">28dp</dimen>
+    <dimen name="size15">30dp</dimen>
+    <dimen name="size16">32dp</dimen>
+    <dimen name="size17">34dp</dimen>
+    <dimen name="size18">36dp</dimen>
+    <dimen name="size19">38dp</dimen>
+    <dimen name="size20">40dp</dimen>
+
+    <dimen name="size21">42dp</dimen>
+    <dimen name="size22">44dp</dimen>
+    <dimen name="size23">46dp</dimen>
+    <dimen name="size24">48dp</dimen>
+    <dimen name="size25">50dp</dimen>
+    <dimen name="size26">52dp</dimen>
+    <dimen name="size27">54dp</dimen>
+    <dimen name="size28">56dp</dimen>
+    <dimen name="size29">58dp</dimen>
+    <dimen name="size30">60dp</dimen>
+
+    <dimen name="size32">64dp</dimen>
+    <dimen name="size35">70dp</dimen>
+    <dimen name="size36">72dp</dimen>
+    <dimen name="size40">80dp</dimen>
+    <dimen name="size42">84dp</dimen>
+    <dimen name="size44">88dp</dimen>
+    <dimen name="size45">90dp</dimen>
+    <dimen name="size50">100dp</dimen>
+    <dimen name="size52">104dp</dimen>
+    <dimen name="size55">110dp</dimen>
+    <dimen name="size60">120dp</dimen>
+    <dimen name="size64">128dp</dimen>
+    <dimen name="size65">130dp</dimen>
+    <dimen name="size70">140dp</dimen>
+    <dimen name="size75">150dp</dimen>
+    <dimen name="size80">160dp</dimen>
+    <dimen name="size85">170dp</dimen>
+    <dimen name="size90">180dp</dimen>
+    <dimen name="size95">190dp</dimen>
+    <dimen name="size98">196dp</dimen>
+    <dimen name="size100">200dp</dimen>
+    <dimen name="size102">204dp</dimen>
+    <dimen name="size105">210dp</dimen>
+    <dimen name="size110">220dp</dimen>
+    <dimen name="size120">240dp</dimen>
+    <dimen name="size128">256dp</dimen>
+    <dimen name="size130">260dp</dimen>
+    <dimen name="size140">280dp</dimen>
+    <dimen name="size150">300dp</dimen>
+    <dimen name="size170">340dp</dimen>
+    <dimen name="size190">380dp</dimen>
+    <dimen name="size200">400dp</dimen>
+    <dimen name="size225">450dp</dimen>
+    <dimen name="size230">460dp</dimen>
+    <dimen name="size240">480dp</dimen>
+    <dimen name="size250">500dp</dimen>
+    <dimen name="size300">600dp</dimen>
+    <!-- End of dp size -->
+
+    <dimen name="size_minus4">-8dp</dimen>
+    <dimen name="size_minus16">-32dp</dimen>
+    <dimen name="size_minus20">-40dp</dimen>
+    <dimen name="size_minus45">-90dp</dimen>
+    <dimen name="size_minus50">-100dp</dimen>
+    <dimen name="size_minus70">-140dp</dimen>
+    <dimen name="size_minus80">-160dp</dimen>
+    <dimen name="size_minus90">-180dp</dimen>
+
+
+</resources>

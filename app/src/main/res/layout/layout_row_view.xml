@@ -1,48 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:padding="@dimen/size1"
+    android:layout_marginTop="@dimen/size0_5"
+    android:layout_marginBottom="@dimen/size0_5">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="2dp"
-        android:layout_toStartOf="@+id/ivShare"
+        android:background="@color/list_background"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:textAppearance="?android:textAppearanceMedium"
-            tools:text="TextView" />
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="2dp"
+            android:layout_toStartOf="@+id/ivShare"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewCountry"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:textAppearance="?android:textAppearanceSmall"
-            tools:text="TextView" />
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                tools:text="TextView" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textViewCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                tools:text="TextView" />
 
-    <ImageView
-        android:id="@+id/ivShare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:background="@android:color/darker_gray"
-        android:layout_marginEnd="10dp"
-        android:src="@android:drawable/ic_menu_share"/>
+        </LinearLayout>
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="@dimen/size35"
+            android:layout_height="@dimen/size35"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_share" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
