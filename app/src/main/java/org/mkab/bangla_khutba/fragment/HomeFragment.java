@@ -27,7 +27,6 @@ import org.mkab.bangla_khutba.util.SharePrefUtil;
 
 import java.util.ArrayList;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
@@ -63,9 +62,8 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_khutba_list, container, false);
         
         initializeViews(rootView);
@@ -137,7 +135,6 @@ public class HomeFragment extends Fragment {
             dialog.show();
         }
 
-        @Nullable
         @Override
         protected Void doInBackground(Void... params) {
 

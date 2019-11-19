@@ -3,6 +3,7 @@ package org.mkab.bangla_khutba.activity;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
@@ -33,6 +34,7 @@ public class BottomViewActivity extends AppCompatActivity {
 
     @BindView(R.id.bottom_view)
     BottomNavigationView mBottomNavigationView;
+    private Handler mHandler;
    /* @BindView(R.id.toolbar)
     Toolbar mToolbar;*/
 
@@ -88,9 +90,20 @@ public class BottomViewActivity extends AppCompatActivity {
             }
         });
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.container, new HomeFragment());
-        transaction.commit();
+
+        mHandler = new Handler();
+
+        Runnable mPendingRunnable = () -> {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.container, new HomeFragment());
+            transaction.commit();
+        };
+
+        // If mPendingRunnable is not null, then add to the message queue
+        if (mPendingRunnable != null) {
+            mHandler.post(mPendingRunnable);
+        }
+
     }
 
 
