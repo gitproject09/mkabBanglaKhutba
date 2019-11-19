@@ -8,8 +8,6 @@ import android.widget.TextView;
 import org.mkab.bangla_khutba.R;
 import org.mkab.bangla_khutba.util.Keys;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.

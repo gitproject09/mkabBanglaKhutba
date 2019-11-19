@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activity.SpashScreenActivity"
+            android:name=".activity.SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activity.UserListActivity"/>
+        <activity android:name=".activity.BottomViewActivity"/>
+
         <activity android:name=".activity.MajlishListActivity" />
         <activity android:name=".activity.KhutbaListActivity" />
         <activity android:name=".activity.MainPageActivity" />
@@ -35,7 +38,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize">
 
         </activity>
-        <activity android:name=".Post.PostData"></activity>
+        <activity android:name=".activity.PostDataActivity"/>
     </application>
 
 

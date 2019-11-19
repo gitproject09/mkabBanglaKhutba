@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import org.mkab.bangla_khutba.Post.PostData;
 import org.mkab.bangla_khutba.R;
 
 public class MainPageActivity extends AppCompatActivity {
@@ -64,7 +63,7 @@ public class MainPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), PostData.class);
+                Intent intent = new Intent(getApplicationContext(), PostDataActivity.class);
                 startActivity(intent);
             }
 

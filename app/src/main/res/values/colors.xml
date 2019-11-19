@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#047988</color>
     <color name="colorAccent">#CE0A51</color>
 
+    <!--<color name="colorPrimary">#213A54</color>
+    <color name="colorPrimaryDark">#4D6176</color>
+    <color name="colorAccent">#009688</color>-->
+
     <color name="black_overlay">#66000000</color>
     <color name="off_white">#f2f2f2</color>
 </resources>

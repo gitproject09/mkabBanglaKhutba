@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import org.mkab.bangla_khutba.R;
 
-public class SpashScreenActivity extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 2000;
 
@@ -29,7 +29,7 @@ public class SpashScreenActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                ActivityCompat.requestPermissions(SpashScreenActivity.this,
+                ActivityCompat.requestPermissions(SplashScreenActivity.this,
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         1);
             }
@@ -49,11 +49,11 @@ public class SpashScreenActivity extends AppCompatActivity {
                     editor.commit();
                 } else {
                     // permission denied, boo! Disable the
-                    Toast.makeText(SpashScreenActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SplashScreenActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
                 }
             }
 
-            startActivity(new Intent(this, KhutbaListActivity.class));
+            startActivity(new Intent(this, BottomViewActivity.class));
             finish();
         }
     }

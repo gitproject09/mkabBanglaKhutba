@@ -1,4 +1,4 @@
-package org.mkab.bangla_khutba.Post;
+package org.mkab.bangla_khutba.activity;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -27,7 +27,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 import org.mkab.bangla_khutba.R;
 
-public class PostData extends AppCompatActivity {
+public class PostDataActivity extends AppCompatActivity {
 
     private ProgressDialog progress;
 
@@ -66,7 +66,7 @@ public class PostData extends AppCompatActivity {
 
 
         protected void onPreExecute() {
-            dialog = new ProgressDialog(PostData.this);
+            dialog = new ProgressDialog(PostDataActivity.this);
             dialog.setTitle("Inserting...");
             dialog.setMessage("Please wait");
             dialog.show();

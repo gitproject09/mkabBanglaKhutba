@@ -1,27 +1,23 @@
-package org.mkab.bangla_khutba.activity;
+package org.mkab.bangla_khutba.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;import android.util.Log;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-
 import org.mkab.bangla_khutba.R;
+import org.mkab.bangla_khutba.activity.KhutbaDetailsActivity;
 import org.mkab.bangla_khutba.adapter.KhutbaAdapter;
 import org.mkab.bangla_khutba.model.KhutbaModel;
 import org.mkab.bangla_khutba.parser.JSONParser;
@@ -29,7 +25,16 @@ import org.mkab.bangla_khutba.util.InternetConnection;
 import org.mkab.bangla_khutba.util.Keys;
 import org.mkab.bangla_khutba.util.SharePrefUtil;
 
-public class KhutbaListActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+/**
+ * Created by Sopan Ahmed on 18-Feb-18.
+ */
+
+public class HomeFragment extends Fragment {
 
     private ListView listView;
     private ArrayList<KhutbaModel> list;
@@ -38,10 +43,37 @@ public class KhutbaListActivity extends AppCompatActivity {
     int jIndex;
     int x;
 
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.majlish_list);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_khutba_list, container, false);
+        
+        initializeViews(rootView);
+
+        return rootView;
+    }
+
+    private void initializeViews(View view) {
 
         /**
          * Array List for Binding Data from JSON to this List
@@ -50,19 +82,19 @@ public class KhutbaListActivity extends AppCompatActivity {
         /**
          * Binding that List to Adapter
          */
-        adapter = new KhutbaAdapter(this, list);
+        adapter = new KhutbaAdapter(getActivity(), list);
 
         /**
          * Getting List and Setting List Adapter
          */
-        listView = (ListView) findViewById(R.id.listView);
+        listView = view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent khutbaDetail = new Intent(getApplicationContext(), KhutbaDetailsActivity.class);
-                khutbaDetail.putExtra(Keys.KEY_TITLE, list.get(position).getDate() + " " + list.get(position).getMonth() + ", " + list.get(position).getYear());
+                Intent khutbaDetail = new Intent(getActivity(), KhutbaDetailsActivity.class);
+                khutbaDetail.putExtra(Keys.KEY_TITLE, list.get(position).getDate() + " " + list.get(position).getMonth() + " " + list.get(position).getYear());
                 khutbaDetail.putExtra(Keys.KEY_KHUTBA_DETAILS, list.get(position).getKhutba_details());
                 startActivity(khutbaDetail);
             }
@@ -75,28 +107,9 @@ public class KhutbaListActivity extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();*/
 
-        if (InternetConnection.checkConnection(getApplicationContext())) {
+        if (InternetConnection.checkConnection(getActivity())) {
             new GetDataTask().execute();
         }
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabMajlish);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(@NonNull View view) {
-
-                /**
-                 * Checking Internet Connection
-                 */
-                if (InternetConnection.checkConnection(getApplicationContext())) {
-                  //  new GetDataTask().execute();
-                    startActivity(new Intent(KhutbaListActivity.this, BottomViewActivity.class));
-                } else {
-                    getKhutbaFromJson();
-                    Snackbar.make(view, "Internet Connection Not Available", Snackbar.LENGTH_LONG).show();
-                }
-            }
-        });
     }
 
     /**
@@ -118,7 +131,7 @@ public class KhutbaListActivity extends AppCompatActivity {
             else
                 jIndex = x;
 
-            dialog = new ProgressDialog(KhutbaListActivity.this);
+            dialog = new ProgressDialog(getActivity());
             dialog.setTitle("Loading...");
             dialog.setMessage("Getting Khutba");
             dialog.show();
@@ -131,14 +144,14 @@ public class KhutbaListActivity extends AppCompatActivity {
             /**
              * Getting JSON Object from Web Using okHttp
              */
-            JSONObject jsonObject = JSONParser.getKhutbaDataFromWeb(getApplicationContext());
+            JSONObject jsonObject = JSONParser.getKhutbaDataFromWeb(getActivity());
 
             try {
                 if (jsonObject != null && jsonObject.length() > 0) {
 
                     JSONArray array = jsonObject.getJSONArray(Keys.KEY_KHUTBA);
 
-                    SharePrefUtil.setSharePrefData(getApplicationContext(), "bangla_khutba", array.toString());
+                    SharePrefUtil.setSharePrefData(getActivity(), "bangla_khutba", array.toString());
 
                     int lenArray = array.length();
                     if (lenArray > 0) {
@@ -185,20 +198,20 @@ public class KhutbaListActivity extends AppCompatActivity {
             if (list.size() > 0) {
                 adapter.notifyDataSetChanged();
             } else {
-                Snackbar.make(findViewById(R.id.parentLayout), "No Data Found", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(getView().findViewById(R.id.parentLayout), "No Data Found", Snackbar.LENGTH_LONG).show();
             }
         }
     }
 
     private void getKhutbaFromJson() {
 
-        dialog = new ProgressDialog(KhutbaListActivity.this);
+        dialog = new ProgressDialog(getActivity());
         dialog.setTitle("Loading...");
         dialog.setMessage("Getting Khutba From Offline");
         dialog.show();
 
         JSONObject jsonObject = new JSONObject();
-        if (SharePrefUtil.getStringValue(getApplicationContext(), "bangla_khutba") != null) {
+        if (SharePrefUtil.getStringValue(getActivity(), "bangla_khutba") != null) {
             dialog.dismiss();
 
            /* boolean isFilePresent = MyJson.isFilePresent(getApplicationContext(), "storage.json");
@@ -226,7 +239,7 @@ public class KhutbaListActivity extends AppCompatActivity {
                          */
                         //  SharePrefUtil.setSharePrefData("bangla_khutba", jsonObject.toString());
 
-                        JSONArray array = jsonObject.getJSONArray(SharePrefUtil.getStringValue(getApplicationContext(), "bangla_khutba"));
+                        JSONArray array = jsonObject.getJSONArray(SharePrefUtil.getStringValue(getActivity(), "bangla_khutba"));
 
                         /**
                          * Check Length of Array...
@@ -292,4 +305,5 @@ public class KhutbaListActivity extends AppCompatActivity {
         }
 
     }
+
 }
