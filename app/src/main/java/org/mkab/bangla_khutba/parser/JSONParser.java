@@ -1,7 +1,6 @@
 package org.mkab.bangla_khutba.parser;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.squareup.okhttp.FormEncodingBuilder;
@@ -14,6 +13,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+
+import androidx.annotation.NonNull;
 
 public class JSONParser {
 
