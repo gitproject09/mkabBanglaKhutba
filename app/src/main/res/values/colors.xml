@@ -17,4 +17,5 @@
     <color name="list_background">#F6F7F9</color>
     <color name="list_view_background">#E9EBEE</color>
     <color name="background_dark">#DFDFDF</color>
+    <color name="collapse_color">#ecbd47</color>
 </resources>
