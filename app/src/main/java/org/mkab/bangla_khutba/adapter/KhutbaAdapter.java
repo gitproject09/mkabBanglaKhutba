@@ -1,10 +1,12 @@
 package org.mkab.bangla_khutba.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -48,7 +50,18 @@ public class KhutbaAdapter extends ArrayAdapter<KhutbaModel> {
         KhutbaModel item = getItem(position);
 
         vh.textViewName.setText(item.getTitle());
-        vh.textViewCountry.setText(item.getDate() + " " + item.getMonth() + ", " + item.getYear());
+        vh.textViewCountry.setText(item.getDate() + " " + item.getMonth() + " " + item.getYear());
+
+        vh.imageViewShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sIntent.setType("text/plain");
+                sIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, item.getDate() + " " + item.getMonth() + " " + item.getYear());
+                sIntent.putExtra(android.content.Intent.EXTRA_TEXT, item.getKhutba_details());
+                context.startActivity(Intent.createChooser(sIntent, "Share this khutba using..."));
+            }
+        });
 
         return vh.rootView;
     }
@@ -58,17 +71,20 @@ public class KhutbaAdapter extends ArrayAdapter<KhutbaModel> {
 
         public final TextView textViewName;
         public final TextView textViewCountry;
+        public final ImageView imageViewShare;
 
-        private ViewHolder(CardView rootView, TextView textViewName, TextView textViewCountry) {
+        private ViewHolder(CardView rootView, TextView textViewName, TextView textViewCountry, ImageView imageViewShare) {
             this.rootView = rootView;
             this.textViewName = textViewName;
             this.textViewCountry = textViewCountry;
+            this.imageViewShare = imageViewShare;
         }
 
         public static ViewHolder create(CardView rootView) {
-            TextView textViewName = (TextView) rootView.findViewById(R.id.textViewName);
-            TextView textViewCountry = (TextView) rootView.findViewById(R.id.textViewCountry);
-            return new ViewHolder(rootView, textViewName, textViewCountry);
+            TextView textViewName = rootView.findViewById(R.id.textViewName);
+            TextView textViewCountry = rootView.findViewById(R.id.textViewCountry);
+            ImageView imageViewShare = rootView.findViewById(R.id.ivShare);
+            return new ViewHolder(rootView, textViewName, textViewCountry, imageViewShare);
         }
     }
 }

@@ -5,7 +5,8 @@
     android:id="@+id/parentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/off_white"
+    android:layout_margin="@dimen/size2"
+    android:background="@color/list_view_background"
     android:layout_marginBottom="?actionBarSize"
     android:fitsSystemWindows="true">
 
@@ -14,11 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@color/list_view_background"
-        android:clipToPadding="false"
-        android:paddingEnd="@dimen/size2"
-        android:paddingStart="@dimen/size2"
-        tools:listitem="@layout/layout_row_view"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_margin="@dimen/size5"
+        android:background="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/size6"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/layout_row_view" />
 
 </RelativeLayout>

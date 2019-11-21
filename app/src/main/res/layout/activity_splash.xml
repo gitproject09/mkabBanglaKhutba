@@ -12,7 +12,7 @@
 		android:layout_height="220dp"
 		android:layout_marginTop="@dimen/size80"
 		android:layout_marginBottom="@dimen/size30"
-		android:src="@drawable/mkab_transparent" />
+		android:src="@drawable/baitul_futuh" />
 
 	<TextView
 		android:id="@+id/txt_heading"

@@ -2,16 +2,24 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/size1"
-    android:layout_marginTop="@dimen/size0_5"
-    android:layout_marginBottom="@dimen/size0_5">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/list_background"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="@dimen/size5"
+        android:paddingBottom="@dimen/size10"
+        android:paddingStart="@dimen/size8"
+        android:paddingEnd="@dimen/size5">
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="@dimen/size30"
+            android:layout_height="@dimen/size30"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_share" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,9 +33,9 @@
                 android:id="@+id/textViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
                 android:textAppearance="?android:textAppearanceMedium"
                 tools:text="TextView" />
 
@@ -35,21 +43,12 @@
                 android:id="@+id/textViewCountry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 tools:text="TextView" />
 
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/ivShare"
-            android:layout_width="@dimen/size35"
-            android:layout_height="@dimen/size35"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/ic_share" />
 
     </RelativeLayout>
 

@@ -38,6 +38,12 @@
             android:configChanges="orientation|keyboardHidden|screenSize">
 
         </activity>
+
+        <activity
+            android:name=".activity.ScrollingActivity"
+            android:theme="@style/AppThemeFull"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
         <activity android:name=".activity.PostDataActivity"/>
     </application>
 

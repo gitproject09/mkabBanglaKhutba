@@ -3,6 +3,7 @@ package org.mkab.bangla_khutba.fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -18,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.mkab.bangla_khutba.R;
 import org.mkab.bangla_khutba.activity.KhutbaDetailsActivity;
+import org.mkab.bangla_khutba.activity.ScrollingActivity;
 import org.mkab.bangla_khutba.adapter.KhutbaAdapter;
 import org.mkab.bangla_khutba.model.KhutbaModel;
 import org.mkab.bangla_khutba.parser.JSONParser;
@@ -36,6 +39,7 @@ import androidx.fragment.app.Fragment;
 public class HomeFragment extends Fragment {
 
     private ListView listView;
+    private ImageView ivShare;
     private ArrayList<KhutbaModel> list;
     private KhutbaAdapter adapter;
     ProgressDialog dialog;
@@ -86,17 +90,30 @@ public class HomeFragment extends Fragment {
          * Getting List and Setting List Adapter
          */
         listView = view.findViewById(R.id.listView);
+       // ivShare = view.findViewById(R.id.ivShare);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent khutbaDetail = new Intent(getActivity(), KhutbaDetailsActivity.class);
+                /*Intent khutbaDetail = new Intent(getActivity(), KhutbaDetailsActivity.class);
+                khutbaDetail.putExtra(Keys.KEY_TITLE, list.get(position).getDate() + " " + list.get(position).getMonth() + " " + list.get(position).getYear());
+                khutbaDetail.putExtra(Keys.KEY_KHUTBA_DETAILS, list.get(position).getKhutba_details());
+                startActivity(khutbaDetail);*/
+
+                Intent khutbaDetail = new Intent(getActivity(), ScrollingActivity.class);
                 khutbaDetail.putExtra(Keys.KEY_TITLE, list.get(position).getDate() + " " + list.get(position).getMonth() + " " + list.get(position).getYear());
                 khutbaDetail.putExtra(Keys.KEY_KHUTBA_DETAILS, list.get(position).getKhutba_details());
                 startActivity(khutbaDetail);
             }
         });
+
+        /*ivShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });*/
 
         /**
          * Just to know onClick and Printing Hello Toast in Center.
