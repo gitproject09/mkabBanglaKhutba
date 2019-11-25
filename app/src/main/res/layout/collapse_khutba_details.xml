@@ -58,7 +58,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/size12">
+                app:cardBackgroundColor="@color/background_studio"
+                android:layout_margin="@dimen/size10">
 
                 <LinearLayout
                     style="@style/Widget.CardContent"
@@ -70,15 +71,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Khutba Title"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                     <TextView
                         android:id="@+id/fullscreen_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textIsSelectable="true"
-                        android:text="hello khutba dekhte kemona se"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                        android:text="hello khutba dekhte kemon ashe"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                 </LinearLayout>
 

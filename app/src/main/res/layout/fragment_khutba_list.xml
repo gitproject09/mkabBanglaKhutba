@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/size2"
-    android:background="@color/list_view_background"
+    android:background="@color/background_studio"
     android:layout_marginBottom="?actionBarSize"
     android:fitsSystemWindows="true">
 

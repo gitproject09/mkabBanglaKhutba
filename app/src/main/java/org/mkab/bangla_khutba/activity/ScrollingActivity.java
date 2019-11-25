@@ -43,6 +43,7 @@ public class ScrollingActivity extends AppCompatActivity {
             tvKhutbaDetails.setText(Html.fromHtml(getIntent().getStringExtra(Keys.KEY_KHUTBA_DETAILS)));
             collapsingToolbar.setTitle(getIntent().getStringExtra(Keys.KEY_TITLE));
             collapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.off_white));
+
             collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.collapse_color));
             tvKhutbaTitle.setText("Friday Sermon : "+getIntent().getStringExtra(Keys.KEY_TITLE));
         }
