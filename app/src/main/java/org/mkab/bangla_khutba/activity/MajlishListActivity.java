@@ -63,13 +63,21 @@ public class MajlishListActivity extends AppCompatActivity {
             }
         });
 
+        if (InternetConnection.checkConnection(getApplicationContext())) {
+            new GetDataTask().execute();
+        } else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Internet Connection Not Available", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
+
         /**
          * Just to know onClick and Printing Hello Toast in Center.
-         */
+
         Toast toast = Toast.makeText(getApplicationContext(), "Click on FloatingActionButton to Load JSON", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
-
+         */
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabMajlish);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -124,7 +132,7 @@ public class MajlishListActivity extends AppCompatActivity {
             /**
              * Getting JSON Object from Web Using okHttp
              */
-            JSONObject jsonObject = JSONParser.getMajlishDataFromWeb();
+            JSONObject jsonObject = JSONParser.getAhbanDataFromWeb();
 
             try {
                 /**
@@ -138,7 +146,7 @@ public class MajlishListActivity extends AppCompatActivity {
                         /**
                          * Getting Array named "contacts" From MAIN Json Object
                          */
-                        JSONArray array = jsonObject.getJSONArray(Keys.KEY_MAJLISH);
+                        JSONArray array = jsonObject.getJSONArray(Keys.KEY_AHBAN);
 
                         /**
                          * Check Length of Array...
@@ -163,7 +171,6 @@ public class MajlishListActivity extends AppCompatActivity {
                                  *
                                  */
                                 JSONObject innerObject = array.getJSONObject(jIndex);
-
 
                                 String region = innerObject.getString(Keys.KEY_REGION);
                                 String district = innerObject.getString(Keys.KEY_DISTRICT);

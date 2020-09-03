@@ -4,6 +4,7 @@ public class Keys {
 
     public static final String KEY_CONTACTS = "Sheet1";
     public static final String KEY_MAJLISH = "Majlish";
+    public static final String KEY_AHBAN = "Ahban";
     public static final String KEY_KHUTBA = "Khutba";
     public static final String KEY_NAME = "name";
     public static final String KEY_COUNTRY = "country";

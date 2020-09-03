@@ -12,11 +12,10 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <ListView  app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <ListView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/listView"
         android:layout_width="fill_parent"
         android:layout_height="match_parent" />
@@ -27,16 +26,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
-        android:src="@android:drawable/stat_sys_download" />
+        android:src="@android:drawable/ic_menu_revert" />
 
     <TextView
         android:id="@+id/tvTextTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:text="Click Here to Get Khutba from Online"
-        android:textColor="@android:color/black"
-        android:src="@android:drawable/stat_sys_download" />
+        android:text="Reload"
+        android:layout_marginEnd="25dp"
+        android:textColor="@android:color/black" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

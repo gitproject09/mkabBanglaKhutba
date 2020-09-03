@@ -1,70 +1,68 @@
 package org.mkab.bangla_khutba.model;
 
-
-
 public class MajlishModel {
 
-    private String region;
-    private String district;
-    private String majlishName;
-    private String nameOfQuaid;
-    private String contactAddress;
-    private String emailAddress;
-    private String mobileNo;
+    private String Region = "Region";
+    private String District = "District";
+    private String MajlishName = "MajlishName";
+    private String NameOfQuaid = "NameOfQuaid";
+    private String ContactAddress = "NameOfQuaid";
+    private String EmailAddress = "NameOfQuaid";
+    private String MobileNo = "NameOfQuaid";
 
     public String getRegion() {
-        return region;
+        return Region;
     }
 
     public void setRegion(String region) {
-        this.region = region;
+        this.Region = region;
     }
 
     public String getDistrict() {
-        return district;
+        return District;
     }
 
     public void setDistrict(String district) {
-        this.district = district;
+        this.District = district;
     }
 
     public String getMajlishName() {
-        return majlishName;
+        return MajlishName;
     }
 
     public void setMajlishName(String majlishName) {
-        this.majlishName = majlishName;
+        this.MajlishName = majlishName;
     }
 
     public String getNameOfQuaid() {
-        return nameOfQuaid;
+        return NameOfQuaid;
     }
 
     public void setNameOfQuaid(String nameOfQuaid) {
-        this.nameOfQuaid = nameOfQuaid;
+        this.NameOfQuaid = nameOfQuaid;
     }
 
     public String getContactAddress() {
-        return contactAddress;
+        return ContactAddress;
     }
 
     public void setContactAddress(String contactAddress) {
-        this.contactAddress = contactAddress;
+        this.ContactAddress = contactAddress;
     }
 
     public String getEmailAddress() {
-        return emailAddress;
+        return EmailAddress;
     }
 
     public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+        this.EmailAddress = emailAddress;
     }
 
     public String getMobileNo() {
-        return mobileNo;
+        return MobileNo;
     }
 
     public void setMobileNo(String mobileNo) {
-        this.mobileNo = mobileNo;
+        this.MobileNo = mobileNo;
     }
 }
