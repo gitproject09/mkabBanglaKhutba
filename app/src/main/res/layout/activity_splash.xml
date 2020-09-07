@@ -21,11 +21,24 @@
 		android:layout_below="@+id/logo"
 		android:padding="@dimen/activity_vertical_margin"
 		android:text="@string/txt_heading"
-		android:textSize="@dimen/textSize15"
+		android:textSize="@dimen/textSize18"
 		android:textAllCaps="false"
 		android:textAlignment="center"
 		android:textColor="@android:color/primary_text_light"
 		android:textStyle="italic" />
+
+	<TextView
+		android:id="@+id/txt_author"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/txt_heading"
+		android:layout_marginTop="@dimen/size50"
+		android:padding="@dimen/activity_vertical_margin"
+		android:text="@string/txt_author"
+		android:textSize="@dimen/textSize20"
+		android:textAllCaps="false"
+		android:textAlignment="center"
+		android:textColor="@android:color/primary_text_light" />
 
 	<TextView
 		android:id="@+id/txt_version"

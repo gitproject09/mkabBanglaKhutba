@@ -64,11 +64,12 @@ public class BottomViewActivity extends AppCompatActivity {
                 Fragment fragCategory = null;
                 // init corresponding fragment
                 switch (item.getItemId()) {
-                    case R.id.menu_home:
-                        fragCategory = new HomeFragment();
-                        break;
+
                     case R.id.menu_categories:
                         fragCategory = new CategoryFragment();
+                        break;
+                    case R.id.menu_home:
+                        fragCategory = new HomeFragment();
                         break;
                     case R.id.menu_services:
                         fragCategory = new ServiceFragment();
@@ -95,7 +96,7 @@ public class BottomViewActivity extends AppCompatActivity {
 
         Runnable mPendingRunnable = () -> {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.container, new HomeFragment());
+            transaction.replace(R.id.container, new CategoryFragment());
             transaction.commit();
         };
 

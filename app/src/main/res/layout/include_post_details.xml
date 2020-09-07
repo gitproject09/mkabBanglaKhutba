@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/cardview_margin_4">
+
+    <TextView
+        android:id="@+id/post_title"
+        style="@style/FontKalpurush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/ic_name"
+        android:ellipsize="end"
+        android:textSize="@dimen/textSize18"
+        android:maxLines="1"
+        android:textColor="@color/black_light" />
+
+    <TextView
+        android:id="@+id/post_body"
+        style="@style/FontKalpurush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textColor="@color/black_dim"
+        android:textSize="@dimen/textSize15"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/ic_designation" />
+
+    <TextView
+        android:id="@+id/post_mobile"
+        style="@style/FontKalpurush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:padding="2dp"
+        android:drawableStart="@drawable/ic_mobile"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/black_dim"
+        android:textSize="@dimen/textSize15" />
+
+    <TextView
+        android:id="@+id/post_email"
+        style="@style/FontKalpurush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:padding="2dp"
+        android:drawableStart="@drawable/ic_email"
+        android:textColor="@color/black_dim"
+        android:textSize="@dimen/textSize15" />
+
+    <TextView
+        android:id="@+id/post_address"
+        style="@style/FontKalpurush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:padding="2dp"
+        android:drawableStart="@drawable/ic_email"
+        android:textColor="@color/black_dim"
+        android:textSize="@dimen/textSize15"/>
+
+    <TextView
+        android:id="@+id/post_others"
+        style="@style/FontKalpurush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:padding="2dp"
+        android:drawableStart="@drawable/ic_designation"
+        android:textColor="@color/black_dim"
+        android:textSize="@dimen/textSize16"/>
+
+</LinearLayout>

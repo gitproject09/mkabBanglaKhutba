@@ -21,6 +21,7 @@ public class JSONParser {
     private static final String MAIN_URL = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1HNNtGUN9HiM6-ekNGFSMZGsLAON9tozZN6vaORADr6M&sheet=Sheet1";
     private static final String MAJLISH_URL = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1HNNtGUN9HiM6-ekNGFSMZGsLAON9tozZN6vaORADr6M&sheet=Majlish";
     private static final String AHBAN_URL = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1HNNtGUN9HiM6-ekNGFSMZGsLAON9tozZN6vaORADr6M&sheet=Ahban";
+    private static final String AHBAN_MAIN_URL = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1HNNtGUN9HiM6-ekNGFSMZGsLAON9tozZN6vaORADr6M&sheet=MonthlyAhban";
     private static final String KHUTBA_URL = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1HNNtGUN9HiM6-ekNGFSMZGsLAON9tozZN6vaORADr6M&sheet=Khutba";
 
     public static final String TAG = "TAG";
@@ -61,7 +62,7 @@ public class JSONParser {
         try {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
-                    .url(AHBAN_URL)
+                    .url(AHBAN_MAIN_URL)
                     .build();
             response = client.newCall(request).execute();
             return new JSONObject(response.body().string());
