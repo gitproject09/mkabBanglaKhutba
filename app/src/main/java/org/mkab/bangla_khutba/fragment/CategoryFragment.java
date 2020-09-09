@@ -59,6 +59,7 @@ import androidx.fragment.app.Fragment;
 public class CategoryFragment extends Fragment {
 
     private ListView listView;
+    private TextView tvSearchCount;
     private ArrayList<AhbanModel> list;
     //private AhbanAdapter adapter;
     private MyAppAdapter myAppAdapter;
@@ -79,6 +80,7 @@ public class CategoryFragment extends Fragment {
         list = new ArrayList<>();
         parkingList = new ArrayList<>();
         listView = rootView.findViewById(R.id.listView);
+        tvSearchCount = rootView.findViewById(R.id.tvSearchCount);
         /**
          * Binding that List to Adapter
          */
@@ -398,6 +400,7 @@ public class CategoryFragment extends Fragment {
             parkingList.clear();
             if (charText.length() == 0) {
                 parkingList.addAll(arraylist);
+                tvSearchCount.setText("Total : " + parkingList.size());
 
             } else {
                 for (AhbanModel postDetail : arraylist) {
@@ -405,10 +408,11 @@ public class CategoryFragment extends Fragment {
                         parkingList.add(postDetail);
                     } else if (charText.length() != 0 && postDetail.getMobileNo().toLowerCase(Locale.getDefault()).contains(charText)) {
                         parkingList.add(postDetail);
-                    } else if (charText.length() != 0 && postDetail.getRoshidNo().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    } else if (charText.length() != 0 && postDetail.getMajlishName().toLowerCase(Locale.getDefault()).contains(charText)) {
                         parkingList.add(postDetail);
                     }
                 }
+                tvSearchCount.setText("Total : " + parkingList.size());
             }
             notifyDataSetChanged();
         }
@@ -441,6 +445,7 @@ public class CategoryFragment extends Fragment {
             dialog = new ProgressDialog(getActivity());
             dialog.setTitle("Please wait...");
             dialog.setMessage("Getting Ahban Users");
+            dialog.setCanceledOnTouchOutside(false);
             dialog.show();
         }
 
@@ -555,6 +560,7 @@ public class CategoryFragment extends Fragment {
 
                 myAppAdapter = new MyAppAdapter(list, getActivity());
                 listView.setAdapter(myAppAdapter);
+                tvSearchCount.setText("Total : " + list.size());
             } else {
                 Snackbar.make(getView().findViewById(R.id.parentLayout), "No Data Found", Snackbar.LENGTH_LONG).show();
             }

@@ -3,11 +3,9 @@ package org.mkab.bangla_khutba.parser;
 import android.content.Context;
 import android.util.Log;
 
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -86,7 +84,7 @@ public class JSONParser {
         return null;
     }
 
-    public static JSONObject getDataById(int userId) {
+  /*  public static JSONObject getDataById(int userId) {
 
         try {
             OkHttpClient client = new OkHttpClient();
@@ -107,5 +105,5 @@ public class JSONParser {
             Log.e(TAG, "" + e.getLocalizedMessage());
         }
         return null;
-    }
+    }*/
 }

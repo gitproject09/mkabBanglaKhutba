@@ -147,6 +147,7 @@ public class HomeFragment extends Fragment {
             dialog = new ProgressDialog(getActivity());
             dialog.setTitle("Loading...");
             dialog.setMessage("Getting Khutba");
+            dialog.setCanceledOnTouchOutside(false);
             dialog.show();
         }
 

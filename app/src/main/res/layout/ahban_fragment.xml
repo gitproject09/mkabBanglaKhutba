@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSearchCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:paddingTop="@dimen/size5"
+        android:paddingBottom="@dimen/size5"
+        android:textSize="@dimen/textSize18"
+        android:textColor="@color/off_white"/>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/list_view_background"
+        android:layout_marginBottom="?actionBarSize"
         android:clipToPadding="false"
         android:paddingEnd="@dimen/size2"
         android:paddingStart="@dimen/size2"
@@ -16,4 +30,4 @@
         android:scrollbars="vertical"
         tools:listitem="@layout/layout_row_view" />
 
-</FrameLayout>
+</LinearLayout>

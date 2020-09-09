@@ -49,6 +49,14 @@
             android:configChanges="orientation|keyboardHidden|screenSize">
         </activity>
         <activity android:name=".activity.PostDataActivity"/>
+
+        <activity android:name=".helper.InsertData"/>
+        <activity android:name=".activity.AddItem"/>
+        <activity android:name=".helper.UpdateData"/>
+        <activity android:name=".helper.ReadSingleData"/>
+        <activity android:name=".helper.DeleteData"/>
+        <activity android:name=".helper.ReadAllData"/>
+
     </application>
 
 
