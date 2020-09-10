@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
 
 public class ServiceFragment extends Fragment {
 
-    private Button read, readAll, insert, delete, update;
+    private Button read, readAll, insert, delete, update, add_item;
 
     @Nullable
     @Override
@@ -41,6 +41,7 @@ public class ServiceFragment extends Fragment {
         insert = rootView.findViewById(R.id.insert_btn);
         update = rootView.findViewById(R.id.update_btn);
         delete = rootView.findViewById(R.id.delete_btn);
+        add_item = rootView.findViewById(R.id.add_item);
 
 
         readAll.setOnClickListener(new View.OnClickListener() {
@@ -65,10 +66,7 @@ public class ServiceFragment extends Fragment {
             public void onClick(View view) {
 
                 if (InternetConnection.checkConnection(getActivity())) {
-                    /*Intent intent = new Intent(getActivity(), InsertData.class);
-                    startActivity(intent);*/
-
-                    Intent intent = new Intent(getActivity(), AddItem.class);
+                    Intent intent = new Intent(getActivity(), InsertData.class);
                     startActivity(intent);
 
 
@@ -126,6 +124,21 @@ public class ServiceFragment extends Fragment {
                     startActivity(intent);
 
 
+                } else {
+                    Toast.makeText(getActivity(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+        });
+
+        add_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (InternetConnection.checkConnection(getActivity())) {
+                    Intent intent = new Intent(getActivity(), AddItem.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(getActivity(), "Check your internet connection", Toast.LENGTH_LONG).show();
                 }

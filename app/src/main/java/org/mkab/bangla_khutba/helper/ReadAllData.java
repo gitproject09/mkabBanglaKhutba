@@ -95,7 +95,7 @@ public class ReadAllData extends AppCompatActivity {
                         /**
                          * Getting Array named "records" From MAIN Json Object
                          */
-                        JSONArray array = jsonObject.getJSONArray("Records");
+                        JSONArray array = jsonObject.getJSONArray("records");
 
                         /**
                          * Check Length of Array...
@@ -121,8 +121,8 @@ public class ReadAllData extends AppCompatActivity {
                                  */
                                 JSONObject innerObject = array.getJSONObject(jIndex);
 
-                                String id = innerObject.getString("ID");
-                                String name = innerObject.getString("NAME");
+                                String id = innerObject.getString("Id");
+                                String name = innerObject.getString("Country");
                                 //  String image = innerObject.getString(Keys.KEY_IMAGE);
                                 /**
                                  * Getting Object from Object "phone"

@@ -52,7 +52,7 @@ public class InsertData extends AppCompatActivity {
         int jIndex;
         int x;
 
-        String result = null;
+        String result = "No Response found";
 
 
         @Override

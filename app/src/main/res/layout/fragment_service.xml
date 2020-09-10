@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activity.BottomViewActivity">
 
-
     <Button
         android:id="@+id/insert_btn"
         android:layout_width="wrap_content"
@@ -61,6 +60,18 @@
         android:layout_alignStart="@+id/read_btn"
         android:layout_below="@+id/read_btn"
         android:text="update" />
+
+    <Button
+        android:id="@+id/add_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/read_btn"
+        android:layout_alignLeft="@+id/read_btn"
+        android:layout_alignRight="@+id/read_btn"
+        android:layout_alignStart="@+id/read_btn"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/delete_btn"
+        android:text="add Item" />
 
 
 </RelativeLayout>
