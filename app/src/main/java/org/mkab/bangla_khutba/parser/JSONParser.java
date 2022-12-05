@@ -73,9 +73,7 @@ public class JSONParser {
     public static JSONObject getKhutbaDataFromWeb(Context context) {
         try {
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url(KHUTBA_URL)
-                    .build();
+            Request request = new Request.Builder().url(KHUTBA_URL).build();
             response = client.newCall(request).execute();
             return new JSONObject(response.body().string());
         } catch (@NonNull IOException | JSONException e) {

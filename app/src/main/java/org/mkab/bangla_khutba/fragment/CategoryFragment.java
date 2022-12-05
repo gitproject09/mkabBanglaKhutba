@@ -562,7 +562,8 @@ public class CategoryFragment extends Fragment {
                 listView.setAdapter(myAppAdapter);
                 tvSearchCount.setText("Total : " + list.size());
             } else {
-                Snackbar.make(getView().findViewById(R.id.parentLayout), "No Data Found", Snackbar.LENGTH_LONG).show();
+                //Snackbar.make(getView().findViewById(R.id.parentLayout), "No Data Found", Snackbar.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "No Data Found", Toast.LENGTH_SHORT).show();
             }
         }
 
